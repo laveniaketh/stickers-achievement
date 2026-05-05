@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&family=Fredoka+One&display=swap");
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+@source "./**/*.{ts,tsx}";
+
+@theme {
+  --font-sans: "Rajdhani", sans-serif;
+  --font-arcade: "Press Start 2P", monospace;
+  --font-display: "Fredoka One", cursive;
+
+  --color-sky: #87ceeb;
+  --color-surface: #e0f2fe;
+  --color-surface-muted: #f8fafc;
+  --color-surface-result: rgba(224, 242, 254, 0.9);
+  --color-surface-intro: rgba(186, 230, 253, 0.82);
+  --color-surface-glass: rgba(8, 8, 8, 0.88);
+
+  --color-primary: #0f172a;
+  --color-muted: #475569;
+  --color-accent: #0ea5e9;
+  --color-border-strong: #0f172a;
+  --color-border-soft: rgba(15, 23, 42, 0.25);
+  --color-border-intro: rgba(12, 74, 110, 0.35);
+  --color-border-glass: rgba(255, 255, 255, 0.07);
+
+  --color-action: #fde047;
+  --color-action-text: #1c1917;
+
+  --color-rank-rookie: #475569;
+  --color-rank-rookie-glow: rgba(71, 85, 105, 0.3);
+  --color-rank-average: #0369a1;
+  --color-rank-average-glow: rgba(3, 105, 161, 0.4);
+  --color-rank-skilled: #047857;
+  --color-rank-skilled-glow: rgba(4, 120, 87, 0.4);
+  --color-rank-expert: #b45309;
+  --color-rank-expert-glow: rgba(180, 120, 0, 0.4);
+  --color-rank-legendary: #6b21a8;
+  --color-rank-legendary-glow: rgba(147, 51, 234, 0.4);
+
+  --color-light-ambient: #fffbe8;
+  --color-light-key: #fff5d6;
+  --color-light-fill: #ffd0a0;
+
+  --color-cheese-body: #f5c842;
+  --color-cheese-gloss: #ffffff;
+
+  --shadow-card: 6px 6px 0 #0f172a;
+  --shadow-badge: 6px 6px 0 #ffffff;
+  --shadow-wrapper: 10px 12px 0 rgba(15, 23, 42, 0.2);
+  --text-shadow-title: 2px 3px 0 rgba(15, 23, 42, 0.15);
+}
+
+/* *,
+*::before,
+*::after {
+  @apply box-border;
+  -webkit-tap-highlight-color: transparent;
+} */
