@@ -1,4 +1,4 @@
-# react-sticker-achievements
+# sticker-achievement
 
 A React package for showing animated sticker achievement overlays when users complete milestones in your app. Achievements are displayed through a 3D sticker roller animation and support both hook-based and imperative APIs for easy integration with any state management setup.
 
@@ -7,7 +7,7 @@ A React package for showing animated sticker achievement overlays when users com
 ## Installation
 
 ```bash
-npm install react-sticker-achievements
+npm install sticker-achievement
 ```
 
 ---
@@ -17,8 +17,8 @@ npm install react-sticker-achievements
 Wrap your app with `AchievementProvider`, define your achievements, then call `unlock` or `track` anywhere inside.
 
 ```tsx
-import AchievementProvider from "react-sticker-achievements";
-import { useAchievements } from "react-sticker-achievements/context";
+import AchievementProvider from "sticker-achievement";
+import { useAchievements } from "sticker-achievement/context";
 import mySticker from "./assets/my-sticker.png";
 
 const achievements = [
@@ -68,7 +68,7 @@ Achievements without `metric` and `threshold` can only be unlocked directly via 
 Use inside any component that is a child of `AchievementProvider`.
 
 ```tsx
-import { useAchievements } from "react-sticker-achievements/context";
+import { useAchievements } from "sticker-achievement/context";
 
 const GameHUD = () => {
   const { unlock, track, unlocked } = useAchievements();
@@ -119,7 +119,7 @@ console.log(unlocked); // ["first-login", "high-score"]
 Works **outside of React** — use this inside Zustand stores, Redux thunks, or any non-component code. No hook required.
 
 ```tsx
-import { achievementManager } from "react-sticker-achievements/context";
+import { achievementManager } from "sticker-achievement/context";
 ```
 
 > `achievementManager` is a no-op until `AchievementProvider` mounts. Make sure your provider is mounted before calling it.
@@ -128,7 +128,7 @@ import { achievementManager } from "react-sticker-achievements/context";
 
 ```ts
 import { create } from "zustand";
-import { achievementManager } from "react-sticker-achievements/context";
+import { achievementManager } from "sticker-achievement/context";
 
 const useGameStore = create((set, get) => ({
   score: 0,
@@ -148,7 +148,7 @@ const useGameStore = create((set, get) => ({
 ### With Redux Thunks
 
 ```ts
-import { achievementManager } from "react-sticker-achievements/context";
+import { achievementManager } from "sticker-achievement/context";
 
 export const submitScore = (score: number) => (dispatch) => {
   dispatch(setScore(score));
@@ -174,8 +174,8 @@ unlock("high-score");
 ## Full Example
 
 ```tsx
-import AchievementProvider from "react-sticker-achievements";
-import { useAchievements } from "react-sticker-achievements/context";
+import AchievementProvider from "sticker-achievement";
+import { useAchievements } from "sticker-achievement/context";
 import { useState } from "react";
 import mySticker from "./assets/my-sticker.png";
 
