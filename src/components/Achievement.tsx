@@ -11,9 +11,10 @@ import AchievementBadge from "@/components/ui/AchievementBadge";
 interface AchievementProps {
     title: string
     sticker: string
+    onDismiss?: () => void
 }
 
-const Achievement = ({ title, sticker }: AchievementProps) => {
+const Achievement = ({ title, sticker, onDismiss }: AchievementProps) => {
     const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -38,8 +39,9 @@ const Achievement = ({ title, sticker }: AchievementProps) => {
             opacity: 0,
             duration: 0.2,
             ease: "power2.in",
+            onComplete: () => onDismiss?.(),
         });
-    }, []);
+    }, [onDismiss]);
 
     return (
         <div ref={containerRef} className="fixed inset-0 h-full w-full touch-none overflow-hidden overscroll-none select-none bg-black/60 backdrop-blur-sm opacity-0">
