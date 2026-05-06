@@ -1,4 +1,4 @@
-import sampleSticker from "@/assets/toilet_1_texture-nobg.png";
+import sampleSticker from "@/assets/surfboard_v2.png";
 import AchievementProvider from "@/components/AchievementProvider";
 import type { AchievementConfig } from "@/contexts/AchievementContext";
 import Demo from "@/components/Demo";
