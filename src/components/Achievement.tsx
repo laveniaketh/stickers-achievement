@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import StickerRoller from "@/components/models/StickerRoller";
 import AchievementBadge from "@/components/ui/AchievementBadge";
 
+
 interface AchievementProps {
     title: string
     sticker: string
@@ -18,7 +19,7 @@ const Achievement = ({ title, sticker, onDismiss }: AchievementProps) => {
     const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
     const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-    const stickerScale = isMobile ? 1.3 : isTablet ? 1.5 : 1.6;
+    const stickerScale = isMobile ? 1.3 : isTablet ? 1.5 : 1.5;
 
     const containerRef = useRef<HTMLDivElement>(null);
     const badgeRef = useRef<HTMLDivElement>(null);
@@ -63,7 +64,7 @@ const Achievement = ({ title, sticker, onDismiss }: AchievementProps) => {
             >
                 <Environment preset="sunset" />
                 <Suspense fallback={null}>
-                    <StickerRoller sticker={sticker} scale={stickerScale} onPeelComplete={handlePeelComplete} />
+                    <StickerRoller sticker={sticker} scale={stickerScale} onPeelComplete={handlePeelComplete} position={[-0.25, 0, 0]} />
                 </Suspense>
             </Canvas>
         </div>

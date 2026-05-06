@@ -4,7 +4,7 @@ import { useAchievements } from "@/contexts/AchievementContext";
 const Demo = () => {
   const { unlock, track } = useAchievements();
   const [score, setScore] = useState(0);
-  const [flushes, setFlushes] = useState(0);
+  // const [flushes, setFlushes] = useState(0);
 
   const addScore = (amount: number) => {
     const next = score + amount;
@@ -12,15 +12,17 @@ const Demo = () => {
     track("score", next);
   };
 
-  const flush = () => {
-    const next = flushes + 1;
-    setFlushes(next);
-    track("flush-count", next);
-  };
+  // const flush = () => {
+  //   const next = flushes + 1;
+  //   setFlushes(next);
+  //   track("flush-count", next);
+  // };
 
   return (
-    <main className="flex flex-col items-center justify-center gap-4 h-screen text-white">
-      <p className="text-sm opacity-60">Score: {score} · Flushes: {flushes}</p>
+    <main className="flex flex-col items-center justify-center gap-4 h-[97vh] text-white">
+      {/* <p className="text-sm text-black opacity-60">Score: {score} · Flushes: {flushes}</p> */}
+      <p className="text-sm text-black opacity-60">Score: {score}</p>
+
 
       <button
         onClick={() => unlock("first-login")}
@@ -43,12 +45,12 @@ const Demo = () => {
         Stack 10 Burgers
       </button>
 
-      <button
+      {/* <button
         onClick={flush}
         className="px-4 py-2 rounded bg-action text-action-text border-2 border-border-strong"
       >
         Flush (+1, need 5)
-      </button>
+      </button> */}
 
       <button
         onClick={() => track("total-spent", 1)}
