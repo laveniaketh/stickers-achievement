@@ -1,6 +1,6 @@
 import sampleSticker from "@/assets/surfboard_v2.png";
 import AchievementProvider from "@/components/AchievementProvider";
-import type { AchievementConfig } from "@/contexts/AchievementContext";
+import type { AchievementConfig } from "@/types";
 import Demo from "@/components/Demo";
 
 const achievements: AchievementConfig[] = [

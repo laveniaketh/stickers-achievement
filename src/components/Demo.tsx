@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAchievements } from "@/contexts/AchievementContext";
+import useAchievements from "@/hooks/useAchievements";
 
 const Demo = () => {
   const { unlock, track } = useAchievements();

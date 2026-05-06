@@ -4,19 +4,10 @@ import {
     useMemo,
     useRef,
     useState,
-    type ReactNode,
 } from "react";
 import Achievement from "@/components/Achievement";
-import {
-    AchievementContext,
-    achievementManager,
-    type AchievementConfig,
-} from "@/contexts/AchievementContext";
-
-interface AchievementProviderProps {
-    achievements: AchievementConfig[];
-    children: ReactNode;
-}
+import { AchievementContext, achievementManager } from "@/contexts/AchievementContext";
+import type { AchievementConfig, AchievementProviderProps } from "@/types";
 
 const AchievementProvider = ({ achievements, children }: AchievementProviderProps) => {
     const [unlocked, setUnlocked] = useState<string[]>([]);

@@ -7,13 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import StickerRoller from "@/components/models/StickerRoller";
 import AchievementBadge from "@/components/ui/AchievementBadge";
-
-
-interface AchievementProps {
-    title: string
-    sticker: string
-    onDismiss?: () => void
-}
+import type { AchievementProps } from "@/types";
 
 const Achievement = ({ title, sticker, onDismiss }: AchievementProps) => {
     const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
