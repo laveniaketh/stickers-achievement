@@ -1,10 +1,6 @@
 import StickerMedal from "@/assets/sticker-medal.png"
-import { cn } from "@/index";
-
-interface AchievementBadgeProps {
-    className?: string
-    children: React.ReactNode;
-}
+import { cn } from "@/lib/utils";
+import type { AchievementBadgeProps } from "@/types";
 
 const AchievementBadge = ({ className, children }: AchievementBadgeProps) => {
     return (

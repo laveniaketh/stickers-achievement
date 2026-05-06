@@ -1,10 +1,48 @@
 import { useState } from "react";
-import { useAchievements } from "@/contexts/AchievementContext";
+import sampleSticker from "@/assets/surfboard_v2.png";
+import AchievementProvider from "@/components/AchievementProvider";
+import type { AchievementConfig } from "@/types";
+import useAchievements from "@/hooks/useAchievements";
 
-const Demo = () => {
+const achievements: AchievementConfig[] = [
+  {
+    id: "first-login",
+    title: "Welcome Back!",
+    sticker: sampleSticker,
+  },
+  {
+    id: "century",
+    title: "Century Score!",
+    sticker: sampleSticker,
+    metric: "score",
+    threshold: 100,
+  },
+  {
+    id: "burger-tower",
+    title: "Highest Burger Stacked!",
+    sticker: sampleSticker,
+    metric: "burger-stack-height",
+    threshold: 10,
+  },
+  {
+    id: "flush-master",
+    title: "Flush Master!",
+    sticker: sampleSticker,
+    metric: "flush-count",
+    threshold: 5,
+  },
+  {
+    id: "big-spender",
+    title: "Big Spender!",
+    sticker: sampleSticker,
+    metric: "total-spent",
+    threshold: 1,
+  },
+];
+
+const DemoContent = () => {
   const { unlock, track } = useAchievements();
   const [score, setScore] = useState(0);
-  // const [flushes, setFlushes] = useState(0);
 
   const addScore = (amount: number) => {
     const next = score + amount;
@@ -12,17 +50,10 @@ const Demo = () => {
     track("score", next);
   };
 
-  // const flush = () => {
-  //   const next = flushes + 1;
-  //   setFlushes(next);
-  //   track("flush-count", next);
-  // };
 
   return (
     <main className="flex flex-col items-center justify-center gap-4 h-[97vh] text-white">
-      {/* <p className="text-sm text-black opacity-60">Score: {score} · Flushes: {flushes}</p> */}
       <p className="text-sm text-black opacity-60">Score: {score}</p>
-
 
       <button
         onClick={() => unlock("first-login")}
@@ -45,13 +76,6 @@ const Demo = () => {
         Stack 10 Burgers
       </button>
 
-      {/* <button
-        onClick={flush}
-        className="px-4 py-2 rounded bg-action text-action-text border-2 border-border-strong"
-      >
-        Flush (+1, need 5)
-      </button> */}
-
       <button
         onClick={() => track("total-spent", 1)}
         className="px-4 py-2 rounded bg-action text-action-text border-2 border-border-strong"
@@ -61,5 +85,11 @@ const Demo = () => {
     </main>
   );
 };
+
+const Demo = () => (
+  <AchievementProvider achievements={achievements}>
+    <DemoContent />
+  </AchievementProvider>
+);
 
 export default Demo;
