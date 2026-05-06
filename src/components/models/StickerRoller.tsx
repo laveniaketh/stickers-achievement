@@ -60,7 +60,7 @@ function StickerRoller1({ sticker, onPeelComplete, ...props }: StickerRollerProp
     setTimeout(() => {
       peelAction.paused = true
       onPeelComplete?.()
-    }, 1950)
+    }, 1900)
   }, [actions, animations, onPeelComplete])
 
   useGSAP(() => {
